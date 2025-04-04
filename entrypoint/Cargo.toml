@@ -1,0 +1,10 @@
+[package]
+name = "entrypoint"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+server = { path = "../server" }
+tokio = { workspace = true, features = ["full"] }
+log = {workspace = true}
+simple_logger = {workspace = true}

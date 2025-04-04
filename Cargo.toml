@@ -1,0 +1,40 @@
+[workspace]
+members = ["server","entrypoint"]
+
+# #exclude = ["local_test/", ".*"]
+build = "build.rs"
+# license = "Apache-2.0"
+
+[profile.release]
+codegen-units = 1 # Compile creates one after another so compiler can optimize better
+debug = false # Disable debug information
+debug-assertions = false # Disable debug assertions
+incremental = false # Disable incremental compilation
+# Enable Link Time Optimization
+# to reduce final binary size with help of the linker
+lto = true # Enables link to optimizations
+opt-level = "s" # Optimize for binary size
+overflow-checks = false # Disable overflow checks
+panic = 'abort' # Strip expesive panic clean-up logic
+rpath = false # Disable rpath
+strip = "symbols" # Automatically strip symbols from the binary
+
+[profile.dev]
+opt-level = 0
+# debug = true
+split-debuginfo = '...'  # Platform-specific.
+strip = false
+debug-assertions = true
+overflow-checks = true
+lto = false
+panic = 'abort'
+incremental = true
+codegen-units = 256
+rpath = false
+
+[workspace.dependencies]
+tokio = {version = "1.44.1", features = ["full"]}
+
+#logging
+log = "0.4.20"
+simple_logger = "4.3.3"
