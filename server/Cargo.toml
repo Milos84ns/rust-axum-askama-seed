@@ -4,9 +4,12 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+# Workspace packages
 log = {workspace = true}
+tokio = { workspace = true, features = ["full"] }
+
+# Crate packages
 axum = "0.8.3"
 lazy_static = "1.5.0"
-tokio = { workspace = true, features = ["full"] }
-axum-embed = "0.1.0"
-rust-embed = "8.6.0"
+rust-embed = {version = "8.6.0", features =["interpolate-folder-path"]}
+askama = "0.13.0"

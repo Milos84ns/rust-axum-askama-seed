@@ -11,6 +11,8 @@ async fn main() {
 
   info!("Starting Application Entrypoint");
 
-    let app = AppBuilder::build();
-    app.start().await;
+    let app = AppBuilder::default().build();
+    let backend = async move { app.start().await;};
+
+    tokio::join!(backend);
 }

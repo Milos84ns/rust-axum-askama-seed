@@ -1,10 +1,10 @@
 mod app;
-mod controllers;
 mod ui;
+mod controllers;
 
 pub use app::*;
 use rust_embed::RustEmbed;
 
 #[derive(RustEmbed, Clone)]
-#[folder = "assets"]
+#[folder = "$CARGO_MANIFEST_DIR/assets"]
 struct Assets;

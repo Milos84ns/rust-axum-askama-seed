@@ -3,7 +3,6 @@ use lazy_static::lazy_static;
 
 pub static PORT: u16 = 11706;
 
-
 lazy_static! {
     pub static ref ENV: String = env::var("ENV").unwrap_or_else(|_| "local".to_owned());
     pub static ref APP: String =
