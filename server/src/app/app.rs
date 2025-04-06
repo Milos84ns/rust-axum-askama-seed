@@ -1,9 +1,10 @@
 use axum::extract::State;
 use axum::handler::Handler;
 use axum::Router;
+use axum_embed::ServeEmbed;
 use crate::controllers::api::create_api_routes;
 use crate::controllers::pages::create_page_routes;
-use crate::PORT;
+use crate::{Assets, PORT};
 use log::{info, LevelFilter};
 use crate::AppStatus::NOT_STARTED;
 
@@ -39,6 +40,7 @@ impl AppBuilder {
     }
     pub fn build(self)-> App {
         let main_router = Router::new()
+            .nest_service("/assets",ServeEmbed::<Assets>::new())
             .with_state(self.app_state)
             .merge(create_page_routes())
             .merge(create_api_routes());

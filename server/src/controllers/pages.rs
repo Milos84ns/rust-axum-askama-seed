@@ -3,11 +3,12 @@ use axum::http::StatusCode;
 use axum::response::{Html, IntoResponse};
 use axum::Router;
 use axum::routing::get;
-use crate::ui::HomePage;
+use crate::ui::{ErrorPage, HomePage};
 
 pub fn create_page_routes() -> Router {
     let mut router = Router::new()
-        .route("/",get(handle_homepage));
+        .route("/",get(handle_homepage))
+        .route("/error",get(handle_error_page));
     router
 }
 
@@ -15,4 +16,13 @@ async fn handle_homepage() -> impl IntoResponse {
     let template = HomePage{};
     let reply_html = template.render().unwrap();
     (StatusCode::OK, Html(reply_html).into_response())
+}
+
+async fn handle_error_page() -> impl IntoResponse {
+    let template = ErrorPage{
+        status_code: 500,
+        error: "Some error I don't know what".to_string(),
+    };
+    let reply_html = template.render().unwrap();
+    (StatusCode::INTERNAL_SERVER_ERROR, Html(reply_html).into_response())
 }

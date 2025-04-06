@@ -1,359 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>FrontendFunn - Semantic UI - Sample Admin Dashboard Template</title>
-
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-            integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q="
-            crossorigin="anonymous"
-    />
-
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-            integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
-            crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Axum Askama Template</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End Plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
-
 <body>
-<!-- sidebar -->
-<div class="ui sidebar inverted vertical menu sidebar-menu" id="sidebar">
-    <div class="item">
-        <div class="header">General</div>
-        <div class="menu">
-            <a class="item">
-                <div>
-                    <i class="icon tachometer alternate"></i>
-                    Dashboard
+<div class="container-scroller">
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+            <a class="sidebar-brand brand-logo" href="/">Axum Askama Template</a>
+            <a class="sidebar-brand brand-logo-mini" href="/">AAT</a>
+        </div>
+        <ul class="nav">
+            <li class="nav-item nav-category">
+                <span class="nav-link">Navigation</span>
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="/">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+                    <span class="menu-title">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+                    <span class="menu-title">Basic UI Elements</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="ui-basic">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="buttons">Buttons</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="dropdowns">Dropdowns</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="typography">Typography</a></li>
+                    </ul>
                 </div>
-            </a>
-        </div>
-    </div>
-    <div class="item">
-        <div class="header">
-            Administration
-        </div>
-        <div class="menu">
-            <a class="item">
-                <div><i class="cogs icon"></i>Settings</div>
-            </a>
-            <a class="item">
-                <div><i class="users icon"></i>Team</div>
-            </a>
-        </div>
-    </div>
-
-    <a href="#" class="item">
-        <div>
-            <i class="icon chart line"></i>
-            Charts
-        </div>
-    </a>
-
-    <a class="item">
-        <div>
-            <i class="icon lightbulb"></i>
-            Apps
-        </div>
-    </a>
-    <div class="item">
-        <div class="header">Other</div>
-        <div class="menu">
-            <a href="#" class="item">
-                <div>
-                    <i class="icon envelope"></i>
-                    Messages
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="basic_elements.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+                    <span class="menu-title">Form Elements</span>
+                </a>
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="healthTable">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+                    <span class="menu-title">Tables</span>
+                </a>
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="chartjs.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+                    <span class="menu-title">Charts</span>
+                </a>
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="mdi.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+              </span>
+                    <span class="menu-title">Icons</span>
+                </a>
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <span class="menu-icon">
+                <i class="mdi mdi-security"></i>
+              </span>
+                    <span class="menu-title">User Pages</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="auth">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="blank-page.html"> Blank Page </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="error-404.html"> 404 </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="error-500.html"> 500 </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="login.html"> Login </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="register.html"> Register </a></li>
+                    </ul>
                 </div>
-            </a>
-
-            <a href="#" class="item">
-                <div>
-                    <i class="icon calendar alternate"></i>
-                    Calendar
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="item">
-        <form action="#">
-            <div class="ui mini action input">
-                <input type="text" placeholder="Search..." />
-                <button class="ui mini icon button">
-                    <i class=" search icon"></i>
+            </li>
+        </ul>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar p-0 fixed-top d-flex flex-row">
+            <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo-mini" href="/"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item w-100">
+                        <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
+                            <input type="text" class="form-control" placeholder="Search...">
+                        </form>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="mdi mdi-format-line-spacing"></span>
                 </button>
             </div>
-        </form>
-    </div>
-    <div class="ui segment inverted">
-        <div class="ui tiny olive inverted progress">
-            <div class="bar" style="width: 54%"></div>
-            <div class="label">Monthly Bandwidth</div>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                {% block main %}
+                {% endblock main %}
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright 2025</span>
+                </div>
+            </footer>
+            <!-- partial -->
         </div>
-
-        <div class="ui tiny teal inverted progress">
-            <div class="bar" style="width:78%"></div>
-            <div class="label">Disk Usage</div>
-        </div>
+        <!-- main-panel ends -->
     </div>
+    <!-- page-body-wrapper ends -->
 </div>
-
-<!-- sidebar -->
-<!-- top nav -->
-
-<nav class="ui top fixed inverted menu">
-    <div class="left menu">
-        <a href="#" class="sidebar-menu-toggler item" data-target="#sidebar">
-            <i class="sidebar icon"></i>
-        </a>
-        <a href="#" class="header item">
-            Semantic UI
-        </a>
-    </div>
-
-    <div class="right menu">
-        <a href="#" class="item">
-            <i class="bell icon"></i>
-        </a>
-        <div class="ui dropdown item">
-            <i class="user cirlce icon"></i>
-            <div class="menu">
-                <a href="#" class="item">
-                    <i class="info circle icon"></i> Profile</a
-                >
-                <a href="#" class="item">
-                    <i class="wrench icon"></i>
-                    Settings</a
-                >
-                <a href="#" class="item">
-                    <i class="sign-out icon"></i>
-                    Logout
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<!-- top nav -->
-
-<div class="pusher">
-    <div class="main-content">
-        <div class="ui grid stackable padded">
-            <div
-                    class="four wide computer eight wide tablet sixteen wide mobile column"
-            >
-                <div class="ui fluid card">
-                    <div class="content">
-                        <div class="ui right floated header red">
-                            <i class="icon shopping cart"></i>
-                        </div>
-                        <div class="header">
-                            <div class="ui red header">
-                                3958
-                            </div>
-                        </div>
-                        <div class="meta">
-                            orders
-                        </div>
-                        <div class="description">
-                            Elliot requested permission to view your contact details
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <div class="ui two buttons">
-                            <div class="ui red button">More Info</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                    class="four wide computer eight wide tablet sixteen wide mobile column"
-            >
-                <div class="ui fluid card">
-                    <div class="content">
-                        <div class="ui right floated header green">
-                            <i class="icon clock"></i>
-                        </div>
-                        <div class="header">
-                            <div class="ui header green">57.6%</div>
-                        </div>
-                        <div class="meta">
-                            Time
-                        </div>
-                        <div class="description">
-                            Elliot requested permission to view your contact details
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <div class="ui two buttons">
-                            <div class="ui green button">More Info</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                    class="four wide computer eight wide tablet sixteen wide mobile column"
-            >
-                <div class="ui fluid card">
-                    <div class="content">
-                        <div class="ui right floated header teal">
-                            <i class="icon briefcase"></i>
-                        </div>
-                        <div class="header">
-                            <div class="ui teal header">3112</div>
-                        </div>
-                        <div class="meta">
-                            Saves
-                        </div>
-                        <div class="description">
-                            Elliot requested permission to view your contact details
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <div class="ui two buttons">
-                            <div class="ui teal button">More Info</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                    class="four wide computer eight wide tablet sixteen wide mobile column"
-            >
-                <div class="ui fluid card">
-                    <div class="content">
-                        <div class="ui right floated header purple">
-                            <i class="icon trophy"></i>
-                        </div>
-                        <div class="header">
-                            <div class="ui purple header">9805</div>
-                        </div>
-                        <div class="meta">
-                            Views
-                        </div>
-                        <div class="description">
-                            Elliot requested permission to view your contact details
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <div class="ui two buttons">
-                            <div class="ui purple button">More Info</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="ui grid stackable padded">
-            <div class="column">
-                <table class="ui celled striped table">
-                    <thead>
-                    <tr>
-                        <th colspan="3">
-                            Git Repository
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="collapsing">
-                            <i class="folder icon"></i> node_modules
-                        </td>
-                        <td>Initial commit</td>
-                        <td class="right aligned collapsing">10 hours ago</td>
-                    </tr>
-                    <tr>
-                        <td><i class="folder icon"></i> test</td>
-                        <td>Initial commit</td>
-                        <td class="right aligned">10 hours ago</td>
-                    </tr>
-                    <tr>
-                        <td><i class="folder icon"></i> build</td>
-                        <td>Initial commit</td>
-                        <td class="right aligned">10 hours ago</td>
-                    </tr>
-                    <tr>
-                        <td><i class="file outline icon"></i> package.json</td>
-                        <td>Initial commit</td>
-                        <td class="right aligned">10 hours ago</td>
-                    </tr>
-                    <tr>
-                        <td><i class="file outline icon"></i> Gruntfile.js</td>
-                        <td>Initial commit</td>
-                        <td class="right aligned">10 hours ago</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="ui grid stackable padded">
-            <div
-                    class="four wide computer eight wide tablet sixteen wide mobile  center aligned column"
-            >
-                <div class="ui teal statistic">
-                    <div class="value">
-                        5,550
-                    </div>
-                    <div class="label">
-                        Downloads
-                    </div>
-                </div>
-            </div>
-            <div
-                    class="four wide computer eight wide tablet sixteen wide mobile  center aligned column"
-            >
-                <div class="ui purple statistic">
-                    <div class="value">
-                        50+
-                    </div>
-                    <div class="label">
-                        Developers
-                    </div>
-                </div>
-            </div>
-            <div
-                    class="four wide computer eight wide tablet sixteen wide mobile  center aligned column"
-            >
-                <div class="ui green statistic">
-                    <div class="value">
-                        800+
-                    </div>
-                    <div class="label">
-                        Commits
-                    </div>
-                </div>
-            </div>
-            <div
-                    class="four wide computer eight wide tablet sixteen wide mobile  center aligned column"
-            >
-                <div class="ui purple statistic">
-                    <div class="value">
-                        1000+
-                    </div>
-                    <div class="label">
-                        Cups of Coffee
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"
-></script>
-<script
-        src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
-        integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI="
-        crossorigin="anonymous"
-></script>
-<script src="./js/script.js"></script>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="assets/js/off-canvas.js"></script>
+<script src="assets/js/hoverable-collapse.js"></script>
+<script src="assets/js/misc.js"></script>
+<script src="assets/js/settings.js"></script>
+<script src="assets/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<!-- End custom js for this page -->
 </body>
 </html>

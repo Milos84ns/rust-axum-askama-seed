@@ -13,3 +13,4 @@ axum = "0.8.3"
 lazy_static = "1.5.0"
 rust-embed = {version = "8.6.0", features =["interpolate-folder-path"]}
 askama = "0.13.0"
+axum-embed = "0.1.0"
