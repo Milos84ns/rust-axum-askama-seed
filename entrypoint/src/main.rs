@@ -1,13 +1,9 @@
 use log::{info, LevelFilter};
-use simple_logger::SimpleLogger;
 use server::{App, AppBuilder};
 
 #[tokio::main]
 async fn main() {
-    SimpleLogger::new()
-        .with_level(LevelFilter::Info)
-        .init()
-        .unwrap();
+  log4rs::init_file("logging_config.yaml", Default::default()).unwrap();
 
   info!("Starting Application Entrypoint");
 
