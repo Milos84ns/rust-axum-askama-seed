@@ -8,6 +8,11 @@ pub struct HomePage {}
 
 
 #[derive(Template)]
+#[template(path = "chartjs.html")]
+pub struct ChartsPage {}
+
+
+#[derive(Template)]
 #[template(path = "error.html")]
 pub struct ErrorPage {
     pub status_code: u16,

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.4/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.4/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui sidebar inverted vertical menu">
+    <a class="item">Home</a>
+    <a class="item">Reports</a>
+    <a class="item">Settings</a>
+</div>
+<div class="pusher">
+    <div class="ui top fixed menu">
+        <a class="item" id="toggle-sidebar">
+            <i class="sidebar icon"></i> Menu
+        </a>
+        <div class="right menu">
+            <a class="item">Profile</a>
+            <a class="item">Logout</a>
+        </div>
+    </div>
+    <div class="ui container" style="margin-top: 50px;">
+        <div class="ui grid">
+            <div class="sixteen wide column">
+                <div class="ui segment">
+                    <h3 class="ui header">Dashboard Content</h3>
+                    <p>Main content goes here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#toggle-sidebar').click(function() {
+        $('.ui.sidebar').sidebar('toggle');
+    });
+</script>
+</body>
+</html>

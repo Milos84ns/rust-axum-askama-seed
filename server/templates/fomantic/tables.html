@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widgets, Charts, and Tables Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.4/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.4/dist/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui container">
+    <h2 class="ui header">Widgets, Charts, and Tables</h2>
+    <div class="ui grid">
+        <div class="four wide column">
+            <div class="ui card">
+                <div class="content">
+                    <div class="header">Widget 1</div>
+                    <div class="description">Description of widget 1.</div>
+                </div>
+            </div>
+        </div>
+        <div class="eight wide column">
+            <div class="ui segment">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+        <div class="four wide column">
+            <table class="ui celled table">
+                <thead>
+                <tr><th>Name</th><th>Age</th><th>Job</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>John</td><td>30</td><td>Developer</td></tr>
+                <tr><td>Jane</td><td>25</td><td>Designer</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    // Example chart using Chart.js
+    var ctx = document.getElementById('chart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['January', 'February', 'March'],
+            datasets: [{
+                label: 'Sales',
+                data: [10, 20, 30],
+                backgroundColor: ['red', 'blue', 'green']
+            }]
+        }
+    });
+</script>
+</body>
+</html>
