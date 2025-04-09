@@ -10,6 +10,7 @@ enum AppError {
     AppErrUnknown
 }
 
+// convert one error type to another
 impl From<std::io::Error> for AppError {
     fn from(err: std::io::Error) -> Self {
         match err.kind() {
@@ -26,6 +27,8 @@ pub struct ErrorPage {
     pub error: String,
 }
 
+
+// from custom error to UI TEmplate
 impl From<AppError> for ErrorPage {
     fn from(err: AppError) -> Self {
         match err {
@@ -48,7 +51,7 @@ impl From<std::io::Error> for ErrorPage {
     }
 }
 
-// impl response for custom error
+// impl axum response for custom error
 // Part 2 Error page IntoResponse
 // now std::fs::read_dir(path)? can be called and error propagated to ErrorPage
 impl IntoResponse for ErrorPage {
