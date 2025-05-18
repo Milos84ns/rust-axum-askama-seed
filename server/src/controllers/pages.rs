@@ -27,7 +27,7 @@ async fn handle_charts() -> impl IntoResponse {
 
 async fn handle_error_page() -> impl IntoResponse {
     let template = ErrorPage{
-        status_code: 500,
+        status_code: StatusCode::INTERNAL_SERVER_ERROR,
         error: "Some error I don't know what".to_string(),
     };
     let reply_html = template.render().unwrap();

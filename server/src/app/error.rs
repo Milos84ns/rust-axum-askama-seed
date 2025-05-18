@@ -1,7 +1,8 @@
+use std::fmt::Display;
 use std::io::ErrorKind;
-use askama::Template;
 use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
+use crate::ui::ErrorPage;
 
 enum AppError {
     JsonError,
@@ -20,15 +21,14 @@ impl From<std::io::Error> for AppError {
     }
 }
 
-#[derive(Template)]
-#[template(path = "error.html")]
-pub struct ErrorPage {
-    pub status_code: StatusCode,
-    pub error: String,
+// impl Display is needed for AppError
+impl Display for AppError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self)
+    }
 }
 
-
-// from custom error to UI TEmplate
+// from custom error to UI Template
 impl From<AppError> for ErrorPage {
     fn from(err: AppError) -> Self {
         match err {
